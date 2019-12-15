@@ -22,7 +22,7 @@ namespace Campeonato2019.Controllers
         // GET: Placar
         public async Task<IActionResult> Index()
         {
-            var campeonato2019Context = _context.Placar.Include(p => p.Atleta);
+            var campeonato2019Context = _context.Placar.Include(p => p.Atleta).OrderByDescending(p=>p.Pontos);
             return View(await campeonato2019Context.ToListAsync());
         }
 

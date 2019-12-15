@@ -26,7 +26,13 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+        @{ 
+            int contador = 0;
+            @foreach (var item in Model)
+            {
+                if (10 > contador)
+                {
+
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Atleta.Nome)
@@ -43,6 +49,9 @@
                 <a asp-action="Delete" asp-route-id="@item.PlacarId">Delete</a>
             </td>
         </tr>
-}
+                }
+                contador++;
+            }
+            }
     </tbody>
 </table>
