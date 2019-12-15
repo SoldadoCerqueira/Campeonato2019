@@ -45,7 +45,7 @@ namespace Campeonato2019.Controllers
             return View(placar);
         }
 
-        // GET: Placar/Create
+        // GET: Placar/Create44
         public IActionResult Create()
         {
             ViewData["AtletaId"] = new SelectList(_context.Atleta, "AtletaId", "Nome");
